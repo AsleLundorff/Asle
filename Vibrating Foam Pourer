@@ -1,0 +1,23 @@
+void setup() {
+pinMode(D2, OUTPUT); // Tilt sensor
+ digitalWrite(D2, LOW); // Onboard vibration motor 
+ pinMode(D0, INPUT); // connect to Vibration tilt sensor S pin
+Serial.begin(9600);
+}
+
+
+void loop() {
+ 
+  if (digitalRead(D0) == LOW){
+     Serial.println("Coffee is almost ready");
+
+    digitalWrite(D2, LOW); // turn on vibration
+    delay(300);
+  }
+  else{
+    digitalWrite(D2, HIGH);
+    
+(digitalRead(D0) == HIGH);
+     Serial.println("Coffee is ready to serve");   
+  }
+}
